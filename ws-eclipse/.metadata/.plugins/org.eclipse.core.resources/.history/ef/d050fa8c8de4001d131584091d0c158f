@@ -1,0 +1,7 @@
+package br.so.soliveira.pages;
+
+import BasePage;
+
+public class ContasPage extends BasePage {
+
+}

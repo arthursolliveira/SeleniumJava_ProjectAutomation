@@ -1,0 +1,21 @@
+package br.so.soliveira.tests;
+
+import org.junit.Test;
+
+import br.so.soliveira.core.BaseTest;
+import br.so.soliveira.pages.ContasPage;
+import br.so.soliveira.pages.MenuPage;
+
+public class ContaTest extends BaseTest {
+	
+	MenuPage menuPage = new MenuPage();
+	ContasPage contasPage = new ContasPage();
+	
+	@Test
+	public void testInserirConta() {
+		menuPage.acessarTelaInserirConta();
+		
+		contasPage.setNome("Conta do Teste");
+	}
+
+}

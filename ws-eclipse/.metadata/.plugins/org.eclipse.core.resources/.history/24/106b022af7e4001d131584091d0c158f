@@ -1,0 +1,16 @@
+package br.so.soliveira.tests;
+
+import org.junit.Test;
+
+import br.so.soliveira.core.BaseTest;
+import br.so.soliveira.pages.MenuPage;
+
+public class MovimentacaoTest extends BaseTest {
+	
+	private MenuPage menuPage = new MenuPage();
+	
+	@Test
+	public void testInserirMovimentacao() {
+		menuPage.acessarTelaInserirMovimentacao();
+	}
+}

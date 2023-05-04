@@ -1,0 +1,38 @@
+package br.so.soliveira.tests;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+import br.so.soliveira.core.BaseTest;
+import br.so.soliveira.pages.MenuPage;
+import br.so.soliveira.pages.MovimentacaoPage;
+
+public class MovimentacaoTest extends BaseTest {
+	
+	private MenuPage menuPage = new MenuPage();
+	private MovimentacaoPage movPage = new MovimentacaoPage();
+	
+	@Test
+	public void testInserirMovimentacao() {
+		menuPage.acessarTelaInserirMovimentacao();
+		
+		movPage.setDataMovimentacao("20/04/2023");
+		movPage.setDataPagamento("27/04/2023");
+		movPage.setDescricao("Movimentacao do teste");
+		movPage.setInteressado("interessado qualquer teste");
+		movPage.setValor("500");
+		movPage.setConta("Conta do Teste alterada");
+		movPage.setStatusPago();
+		movPage.salvar();
+		
+		Assert.assertEquals("Movimentação adicionada com sucesso!", movPage.obterMensagemSucesso());
+	}
+	
+	@Test
+	public void testCamposObrigatorios() {
+		menuPage.acessarTelaInserirMovimentacao();
+		
+		movPage.salvar();
+		movePage.obterErros();
+	}
+}

@@ -1,0 +1,7 @@
+package br.so.soliveira.tests;
+
+import br.so.soliveira.core.BaseTest;
+
+public class ContaTest extends BaseTest {
+
+}

@@ -1,0 +1,20 @@
+package br.so.soliveira.tests;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+import br.so.soliveira.core.BaseTest;
+import br.so.soliveira.core.Propriedades;
+import br.so.soliveira.pages.HomePage;
+import br.so.soliveira.pages.MenuPage;
+
+public class SaldoTest extends BaseTest {
+	HomePage page = new HomePage();
+	MenuPage menu = new MenuPage();
+
+	@Test
+	public void testSaldoConta() {
+		menu.acessarTelaPrincipal();
+		Assert.assertEquals("500.00", page.obterSaldoConta(Propriedades.NOME_CONTA_ALTERADA));
+	}
+}

@@ -1,0 +1,48 @@
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class TesteCadastro {
+	
+	
+	private WebDriver driver;
+	private DSL dsl;
+	private CampoTreinamentoPage page;
+	
+	@Before
+	public void inicializa() {
+		driver = new FirefoxDriver();
+		driver.manage().window().maximize();
+		driver.get("file:///" + System.getProperty("user.dir") + "/src/main/resources/componentes.html");
+		dsl = new DSL(driver);
+		page = new CampoTreinamentoPage(driver);
+	}
+	
+	@After
+	public void finaliza() {
+		driver.quit(); 
+	}
+	
+	@Test
+	public void deverRealizarCadastro(){
+		page.setNome("Arthur");
+		page.setSobrenome("Silva");
+		page.setSexoMasculino();
+		page.setComidaCarne();
+		page.setEscolaridade("Mestrado");
+		page.setEsporte("Natacao");
+		page.setcadastrar(); 
+		
+		Assert.assertEquals("Cadastrado!", page.obterResultadoCadastro());
+		Assert.assertEquals("Arthur", page.obterNomeCadastro());
+		Assert.assertEquals("Silva", page.obterSobrenomeCadastro());
+		Assert.assertEquals("Masculino", page.obterSexoCadastro());
+		Assert.assertEquals("Carne", page.obterComidaCadastrado());
+		Assert.assertEquals("mestrado", page.obterEscolaridadeCadastro());
+		Assert.assertEquals("Natacao", page.obterEsporteCadastro());
+	}
+}
+

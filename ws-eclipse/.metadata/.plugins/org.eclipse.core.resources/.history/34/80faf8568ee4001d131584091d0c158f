@@ -1,0 +1,12 @@
+package br.so.soliveira.pages;
+
+import br.so.soliveira.core.BasePage;
+
+public class ContasPage extends BasePage {
+	
+	public void setNome(String nome) {
+		escrever("nome", nome);
+	}
+	
+
+}

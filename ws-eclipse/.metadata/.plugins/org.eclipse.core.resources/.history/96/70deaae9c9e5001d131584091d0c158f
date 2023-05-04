@@ -1,0 +1,16 @@
+package br.so.soliveira.tests;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+import br.so.soliveira.core.BaseTest;
+import br.so.soliveira.pages.HomePage;
+
+public class SaldoTest extends BaseTest {
+	HomePage page = new HomePage();
+
+	@Test
+	public void testSaldoConta() {
+		Assert.assertEquals("500.00", page.obterSaldoConta("Conta do Teste alterada"));
+	}
+}

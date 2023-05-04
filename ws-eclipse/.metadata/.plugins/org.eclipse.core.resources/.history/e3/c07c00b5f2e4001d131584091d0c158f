@@ -1,0 +1,14 @@
+package br.so.soliveira.pages;
+
+import br.so.soliveira.core.BasePage;
+
+public class MovimentacaoPage extends BasePage {
+	
+	public void setDataMovimentacao(String  data) {
+		escrever("data_transacao", data);
+	} 
+	
+	public void setDataPagamento(String  data) {
+		escrever("data_pagamento", data);
+	} 
+}

@@ -1,0 +1,14 @@
+package br.so.soliveira.tests;
+
+import org.junit.Test;
+
+import br.so.soliveira.core.BaseTest;
+
+public class ContaTest extends BaseTest {
+	
+	@Test
+	public void testInserirConta() {
+		
+	}
+
+}

@@ -1,0 +1,16 @@
+package br.so.soliveira.pages;
+
+import org.openqa.selenium.By;
+
+import br.so.soliveira.core.BasePage;
+
+public class ContasPage extends BasePage {
+	
+	public void setNome(String nome) {
+		escrever("nome", nome);
+	}
+	
+	public void salvar() {
+		clicarBotao(By.xpath("//button[.='Salvar']"));
+	}
+}

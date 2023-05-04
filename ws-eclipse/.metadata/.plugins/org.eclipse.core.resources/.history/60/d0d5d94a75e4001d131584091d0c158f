@@ -1,0 +1,28 @@
+package br.so.soliveira.tests;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.rules.TestName;
+
+import Package.core.DriverFactory;
+import br.so.soliveira.core.Propriedades;
+
+public class BaseTest {
+	
+	@Rule
+	public TestName testName = new TestName();
+	
+	@Before
+	public void inicializa() {
+		
+	}
+	
+	@After
+	public void finaliza(){
+		if(Propriedades.FECHAR_BROWSER) {
+			DriverFactory.killDriver();
+		}
+	}
+
+}

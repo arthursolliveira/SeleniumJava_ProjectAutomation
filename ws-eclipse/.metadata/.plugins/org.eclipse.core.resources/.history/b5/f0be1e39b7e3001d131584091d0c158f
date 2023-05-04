@@ -1,0 +1,21 @@
+package Package.suites;
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
+import org.junit.runners.Suite.SuiteClasses;
+
+import Package.test.TesteAlert;
+import Package.test.TesteCadastro;
+import Package.test.TesteCampoTreinamento;
+import Package.test.TesteFramesEJanelas;
+import Package.test.TesteRegraDeNegocio;
+
+@RunWith(Suite.class)
+@SuiteClasses({
+	TesteCadastro.class,
+	TesteRegraDeNegocio.class,
+	TesteFramesEJanelas.class,
+	TesteCampoTreinamento.class
+})
+public class SuiteTeste {
+
+}

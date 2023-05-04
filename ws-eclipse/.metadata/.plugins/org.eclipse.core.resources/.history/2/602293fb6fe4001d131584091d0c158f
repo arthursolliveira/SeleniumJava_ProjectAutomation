@@ -1,0 +1,7 @@
+package br.so.soliveira.pages;
+
+import basepage;
+
+public class LoginPage extends basepage {
+
+}

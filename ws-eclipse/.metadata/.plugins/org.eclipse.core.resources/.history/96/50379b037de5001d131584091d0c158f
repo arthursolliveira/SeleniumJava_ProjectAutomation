@@ -1,0 +1,23 @@
+package br.so.soliveira.tests;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+import br.so.soliveira.pages.ContasPage;
+import br.so.soliveira.pages.MenuPage;
+
+public class RemoverMovimentacaoContaTest {
+	
+	MenuPage menuPage = new MenuPage();
+	ContasPage contasPage = new ContasPage();
+
+	@Test
+	public void testExcluirContaComMovimentacao() {
+		menuPage.acessarTelalistarConta();
+		
+		contasPage.cliarExcluirConta("Conta do Teste alterada");
+		
+		Assert.assertEquals("Conta em uso na movimentações", contasPage.obterMensagemContaExistente());
+
+	}
+}

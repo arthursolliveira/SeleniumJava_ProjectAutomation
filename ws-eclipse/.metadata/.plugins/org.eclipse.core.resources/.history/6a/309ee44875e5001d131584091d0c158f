@@ -1,0 +1,27 @@
+package br.so.soliveira.tests;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+import br.so.soliveira.core.BaseTest;
+import br.so.soliveira.pages.MenuPage;
+import br.so.soliveira.pages.ResumoPage;
+
+public class ResumoTest extends BaseTest {
+	private MenuPage menuPage = new MenuPage();
+	private ResumoPage resumoPage = new ResumoPage();
+	
+	@Test
+	public void testExcluirMovimentacao() {
+		menuPage.acessarTelaResumo();
+		resumoPage.excluirMovimentacao();
+
+		Assert.assertEquals("Movimentação removida com sucesso!", 
+				resumoPage.obterMensagemSucesso());
+	}
+	
+	@Test
+	public void testResumoMensal() {
+		
+	}
+}

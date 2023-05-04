@@ -1,0 +1,9 @@
+package br.so.soliveira.pages;
+
+import org.junit.Test;
+
+import br.so.soliveira.core.BasePage;
+
+public class MenuPage extends BasePage{
+
+}

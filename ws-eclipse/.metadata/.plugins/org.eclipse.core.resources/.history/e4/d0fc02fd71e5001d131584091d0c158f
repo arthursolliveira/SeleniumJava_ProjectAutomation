@@ -1,0 +1,7 @@
+package br.so.soliveira.pages;
+
+import br.so.soliveira.core.BasePage;
+
+public class HomePage extends BasePage {
+
+}
